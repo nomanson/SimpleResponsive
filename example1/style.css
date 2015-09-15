@@ -1,0 +1,128 @@
+
+/************************************************************
+ Simple responsive example with 4 breakpoints (layouts). 
+   - mobile
+   - 480px - 700px (large phones and small tablets)
+   - 700px - 1024px (phones in horisontal view and tablets
+   - 1024px and bigger (tablets in horisontal view and PC's)
+*************************************************************/
+
+/* general css */
+
+* {
+  box-sizing: border-box;
+}
+
+/****************************************************************
+ breakpoint 1: mobile first css
+ - all elements are 100% width (default for block-level elements)
+*****************************************************************/
+#wrapper {
+  margin: 0px;
+  padding: 0px;
+  outline: 1px dashed #333
+}
+
+div {
+  outline: 1px dashed #333;
+}
+
+.athird, .half {
+  font-size: 1.3em;
+}
+
+.halfhalf {
+  font-size: 0.8em;
+}
+
+footer, header {
+  font-size: 1.5em;
+  height: auto;
+  outline: 1px dashed #333;
+  text-align: center;
+}
+
+/****************************************************************
+ breakpoint 2: mediaquery for device width over 480px
+ - we now use a fluid grid (percent)
+ - third and quart (halfhalf) boxes are set to a percentage width and floated
+ - elements get more height
+ - we have more space so the wrapper gets a margin for prettier look
+*****************************************************************/
+ 
+@media screen and (min-width: 480px) {
+
+#wrapper {
+  width: 94%;
+  margin: auto;
+  outline: 1px dashed #333
+}
+
+header, footer {
+  height: 60px;
+  overflow: hidden;
+  width: 100%
+}
+
+div {
+  min-height: 130px;
+  overflow: hidden
+}
+
+.athird {
+  width: 33.33333%;
+  float: left
+}
+
+.half {
+  width: 100%;
+  min-height: 120px;
+}
+
+.halfhalf {
+  width: 50%;
+  min-height: 120px;
+  float: left
+}
+}
+
+/****************************************************************
+breakpoint 3: mediaquery for device width over 700px
+- half boxes are turned into 50% size
+- quart boxes are turned into 100% to stack inside half boxes
+*****************************************************************/
+@media screen and (min-width: 700px) {
+
+.half {
+  width: 50%;
+  float: left;
+  min-height: 120px;
+}
+
+.halfhalf {
+  width: 100%;
+  min-height: 60px;
+  float: left
+}
+}
+
+/****************************************************************
+ breakpoint 4: mediaquery for device width over 1024px
+ - we have more space, so quarts are now width 50% to fit side by
+   side
+ - this is our last breakpoint so we make the grid fixed width by
+   giving the wrapper a pixel size
+*****************************************************************/
+@media screen and (min-width: 1024px) {
+
+#wrapper {
+  width: 960px;
+  outline: 1px dashed #333
+}
+
+.halfhalf {
+  width: 50%;
+  min-height: 120px;
+  float: left
+}
+}
