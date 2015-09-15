@@ -13,6 +13,22 @@
   box-sizing: border-box;
 }
 
+/*****************************************************************
+responsive images are always 100% and the sizing is done on their
+parent element.
+******************************************************************/
+
+img {
+  width: 100%;
+}
+
+.figure {
+  float: right;
+  margin-bottom: 0.5em;
+  margin: 2.08333333333333%;  /* 10px / 480px */
+  width: 45.83333333333333%;  /* 220px / 480px */
+}
+
 /****************************************************************
  breakpoint 1: mobile first css
  - all elements are 100% width (default for block-level elements)
@@ -26,7 +42,7 @@
 /* a background images with 12 columns of 60px with 10px margin on each side
 to be displayed when you hover the mouse */
 #wrapper:hover {
-    background:url(../images/12_col.gif) top left repeat-y content-box;
+  background: url(../images/12_col.gif) top left repeat-y content-box;
 }
 
 div {
@@ -35,6 +51,7 @@ div {
 
 .athird, .half {
   font-size: 1.3em;
+  overflow: hidden;
 }
 
 .halfhalf {
